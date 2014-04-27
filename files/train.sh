@@ -11,9 +11,5 @@
 # format the training data
 python classifier/format_train_data.py
 
-# do feature selection
-python classifier/pca.py
-
 # train the classifier
-#./classifier/train feats/train_formatted.lsvm emotion.model
-python classifier/svm.py
+./classifier/train feats/train_formatted.lsvm emotion.model
