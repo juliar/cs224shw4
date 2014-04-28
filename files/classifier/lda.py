@@ -1,5 +1,7 @@
 import numpy
 from sklearn.lda import LDA
+from sklearn.qda import QDA
+from sklearn.datasets import load_svmlight_file
 
 # load training data
 train_file = open('../feats/train_formatted.lsvm', 'r')
@@ -47,12 +49,24 @@ X_test = numpy.array(X_test_list)
 Y_test = numpy.array(Y_test_list)
 #print sum(numpy.isinf(X_train))
 
-
+# Use load_svmlight_file
+X_train, Y_train = load_svmlight_file("../feats/train_formatted.lsvm")
+X_train = X_train.toarray()
+X_test, Y_test = load_svmlight_file("../feats/test_formatted.lsvm")
+X_test = X_test.toarray()
+print X_train
 
 # LDA
-clf = LDA()
+#clf = LDA()
+#clf.fit(X_train,Y_train)
+#qda_pred = clf.predict(X_test)
+#accuracy = sum(adq_pred == Y_test)/Y_test.size
+#print 'LDA Accuracy: ' + str(accuracy)
+
+# QDA
+clf = QDA()
 clf.fit(X_train,Y_train)
 qda_pred = clf.predict(X_test)
 accuracy = sum(adq_pred == Y_test)/Y_test.size
-print 'LDA Accuracy: ' + str(accuracy)
+print 'QDA Accuracy: ' + str(accuracy)
 
