@@ -1,3 +1,4 @@
+from __future__ import division
 import numpy
 from sklearn.lda import LDA
 from sklearn.qda import QDA
@@ -54,19 +55,19 @@ X_train, Y_train = load_svmlight_file("../feats/train_formatted.lsvm")
 X_train = X_train.toarray()
 X_test, Y_test = load_svmlight_file("../feats/test_formatted.lsvm")
 X_test = X_test.toarray()
-print X_train
+#print X_train
 
 # LDA
 #clf = LDA()
 #clf.fit(X_train,Y_train)
 #qda_pred = clf.predict(X_test)
-#accuracy = sum(adq_pred == Y_test)/Y_test.size
+#accuracy = sum(qda_pred == Y_test)/Y_test.size
 #print 'LDA Accuracy: ' + str(accuracy)
 
 # QDA
 clf = QDA()
 clf.fit(X_train,Y_train)
 qda_pred = clf.predict(X_test)
-accuracy = sum(adq_pred == Y_test)/Y_test.size
+accuracy = sum(qda_pred == Y_test)/Y_test.size
 print 'QDA Accuracy: ' + str(accuracy)
 
