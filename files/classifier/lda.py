@@ -58,11 +58,11 @@ X_test = X_test.toarray()
 #print X_train
 
 # LDA
-#clf = LDA()
-#clf.fit(X_train,Y_train)
-#qda_pred = clf.predict(X_test)
-#accuracy = sum(qda_pred == Y_test)/Y_test.size
-#print 'LDA Accuracy: ' + str(accuracy)
+clf = LDA()
+clf.fit(X_train,Y_train)
+qda_pred = clf.predict(X_test)
+accuracy = sum(qda_pred == Y_test)/Y_test.size
+print 'LDA Accuracy: ' + str(accuracy)
 
 # QDA
 clf = QDA()
