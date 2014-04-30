@@ -1,12 +1,16 @@
-Fill out this README with your group names and information on how to run
-your code (and anything else you think is important to the TAs). Example:
 
---------------------------------------------------------------------------------
+pochuan - Paul Chen
+jneid - Julia Neidert
 
-amaas - Andrew Maas
-pengqi - Peng Qi
-nayaks - Sushobhan Nayak
-liuf - Frank Liu
+Run the code by first extracting the features using extract_feat.sh
+Our best error rate is given by running "python univariate_logistic.py" in 
+the classifier directory
+To run it on different input data, edit the filepaths in the .py files.
 
-Run the code by first extracting the features using extract_feat.sh, then
-<etc...>.
+All of our code is in the classifier directory
+univariate_logistic.py
+rand_logistic.py
+svm.py
+randForest.py
+pca.py
+rfecv.py

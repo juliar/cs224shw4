@@ -17,7 +17,7 @@ X_test = selector.transform(X_test)
 scores = selector.ranking_
 print 'Index    :   score'
 sortedIdx = [i[0] for i in sorted(enumerate(scores), key=lambda x:x[1])]
-top = 30
+top = 384
 for i in range(top):
     print str(sortedIdx[i]) + ' :   ' + str(scores[sortedIdx[i]])
 
